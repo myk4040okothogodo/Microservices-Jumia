@@ -14,7 +14,6 @@ import (
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/graph"
   "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/graph/generated"
-  apiHolder "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/api_holder"
 
 )
 
@@ -35,18 +34,24 @@ func main() {
   
 
 
-  svc, err := apiHolder.NewServiceHolder()
+  //svc, err := apiHolder.NewServiceHolder()
+  //if err != nil {
+   //     log.Fatalf("failed to create grpc api holder: %s", err)
+  //}
+
+  conn, err := grpc.Dial("localhost:9092")
   if err != nil {
-        log.Fatalf("failed to create grpc api holder: %s", err)
+      panic(err)
   }
 
+  defer conn.Close()
 
   router := chi.NewRouter() 
   database.InitDB()
   database.Migrate()
 
-	//server := handler.NewDefaultServer(ServiceB_Jumia.NewExecutableSchema(ServiceB_Jumia.Config{Resolvers: &ServiceB_Jumia.Resolver{}}))
-  server := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.NewResolver(svc)}))
+	server := handler.NewDefaultServer(ServiceB_Jumia.NewExecutableSchema(generated.Config{Resolvers:  &graph.Resolver{}}))
+  //server := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.NewResolver(svc)}))
 
 	router.Handle("/", playground.Handler("GraphQL playground", "/query"))
 	router.Handle("/query", server)
