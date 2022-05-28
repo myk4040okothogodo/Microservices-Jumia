@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+option go_package = "./;protos";
+
+service serviceA {
+    rpc GetCsvData(DataRequest) returns (DataResponse);
+  }
+
+
+message DataRequest {
+    string token = 1;
+  }
+
+
+message CustomerPurchaseDetails{
+
+    string email          = 1;
+    double  parcel_weight  = 2;
+    string phone_number   = 3;
+    int64  CountryCode  = 4;
+  }
+
+message DataResponse{
+  repeated CustomerPurchaseDetails PurchaseDetails = 1;
+
+}
+
+
+enum CountryCodes {
+    KENYA    = 0;
+    UGANDA   = 1;
+    TANZANIA = 2;
+    BURUNDI  = 3;
+    GHANA    = 4;
+    NIGERIA  = 5;
+    EGYPT    = 6;
+  }

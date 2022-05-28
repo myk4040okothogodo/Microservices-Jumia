@@ -1,0 +1,48 @@
+type Order {
+  id: ID!
+  parcelweight: Float!
+  country: String!
+  email  : String!
+  phone  : String!
+  }
+
+type User {
+  id: ID!
+  username: String !
+  }
+
+
+type Query{
+    orders: [Order!]!
+    users: [User!]!
+  }
+
+input NewOrder {
+  parcelweight: Float!
+  country: String!
+  email : String!
+  phone : String!
+}
+
+input RefreshTokenInput {
+  token: String!
+}
+
+input NewUser {
+  username: String!
+  password: String!
+}
+
+
+input Login {
+  username: String!
+  password: String!
+
+  }
+
+type Mutation {
+  createOrder(input: NewOrder!): Order!
+  createUser(input:  NewUser!): String!
+  login(input: Login!): String!
+  refreshToken(input: RefreshTokenInput!): String!
+}
