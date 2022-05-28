@@ -4,8 +4,10 @@ package graph
 // will be copied through when generating and any unknown code will be moved to the end.
 
 import (
+  "strconv"
 	"context"
 	"fmt"
+  "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/users"
   "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders"
 	"github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/graph/generated"
 	"github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/graph/model"
@@ -27,7 +29,7 @@ func (r *mutationResolver) CreateUser(ctx context.Context, input model.NewUser) 
   user.Username = input.Username
   user.Password = input.Password
   user.Create()
-  return &model.User{Username: user.Username}, nil
+  return "", nil
 }
 
 func (r *mutationResolver) Login(ctx context.Context, input model.Login) (string, error) {
@@ -43,7 +45,7 @@ func (r *queryResolver) Orders(ctx context.Context) ([]*model.Order, error) {
   var dbOrders  []orders.Order
   dbOrders = orders.GetAll()
   for _, order := range dbOrders {
-      resultOrders = append(resultOrders, &model.Order{ID: order.ID, Parcelweight: order.Parcelweight,Country: order.Country, Email: order.Email, Phone: order.Phone })
+      resultOrders = append(resultOrders, &model.Order{Parcelweight: order.Parcelweight,Country: order.Country, Email: order.Email, Phone: order.Phone })
   }
   return resultOrders, nil
 }

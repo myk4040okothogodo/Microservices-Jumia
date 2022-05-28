@@ -27,7 +27,7 @@ func main() {
 
   serviceASvc := os.Getenv("SERVICE_A_SERVICE")
   if serviceASvc == "" {
-      log.Printf("Failed to load environment variable: %s", "SERVICE_A_SERVICE", setting default)
+      log.Printf("Failed to load environment variable: %s", "SERVICE_A_SERVICE", setting default),
       serviceASvc = "localhost:9092"
   }
 

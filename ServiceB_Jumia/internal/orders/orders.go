@@ -7,7 +7,7 @@ import (
 
 
 type  Order struct {
-    ID           int
+    ID           string
     Parcelweight float64
     Country      string
     Email        string
