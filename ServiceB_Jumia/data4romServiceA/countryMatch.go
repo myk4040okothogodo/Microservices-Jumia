@@ -1,6 +1,6 @@
 package data4romServiceA
 
-func matchCodeToCountry(code int) string{
+func matchCodeToCountry(code int64) string{
     var countryCode = map[int64]string{
          254         : "KENYA",
          237         : "CAMEROON",
