@@ -9,6 +9,23 @@ import (
 
   )
 
+type Csvdata struct {
+    l *log.Logger
+    sc protos.ServiceAClient
+}
+
+func NewCsvdata(l *log.Logger, sc protos.ServiceAClient) *Csvdata {
+    return &Csvdata{l, sc}
+}
+
+
+type GenericError struct{
+    Message string `json:"message"`
+}
+
+type ValidationError struct {
+    Messages []string `json: "messages"`
+}
 
 
 func (c *Csvdata) saveData() {

@@ -6,7 +6,7 @@ require (
 	github.com/99designs/gqlgen v0.17.9
 	github.com/go-chi/chi/v5 v5.0.7
 	github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220529160354-899c796a3da9
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529170637-dba1499fcd02
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529172708-58d87a386454
 	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220529160354-899c796a3da9
 	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220529160354-899c796a3da9
 	github.com/vektah/gqlparser/v2 v2.4.4
