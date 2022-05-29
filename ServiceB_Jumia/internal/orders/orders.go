@@ -3,7 +3,8 @@ package orders
 import (
     database "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql"
     "log"
-)
+
+  )
 
 
 type  Order struct {
@@ -62,4 +63,4 @@ func GetAll() []Order{
       log.Fatal(err)
   }
   return orders
-}
+ }

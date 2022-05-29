@@ -1,6 +1,7 @@
 package main
 
 import (
+  "syscall"
   "context"
   "fmt"
 	"log"
@@ -8,8 +9,11 @@ import (
 	"os"
   "os/signal"
   "time"
-   database "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql"
-   "github.com/go-chi/chi/v5"
+  "google.golang.org/grpc"
+  serviceAData"github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA"
+  database "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql"
+  serviceA "github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos"
+  "github.com/go-chi/chi/v5"
 	"github.com/99designs/gqlgen/graphql/handler"
 	"github.com/99designs/gqlgen/graphql/playground"
 	"github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/graph"
@@ -25,11 +29,12 @@ func main() {
 		port = defaultPort
 	}
 
-  serviceASvc := os.Getenv("SERVICE_A_SERVICE")
-  if serviceASvc == "" {
-      log.Printf("Failed to load environment variable: %s", "SERVICE_A_SERVICE", setting default),
-      serviceASvc = "localhost:9092"
-  }
+  l := log.New(os.Stdout, "customer_purchases-api ", log.LstdFlags)
+//  serviceASvc := os.Getenv("SERVICE_A_SERVICE")
+//  if serviceASvc == "" {
+//      log.Printf("Failed to load environment variable: %s", "SERVICE_A_SERVICE", setting default),
+//      serviceASvc = "localhost:9092"
+//  }
 
   
 
@@ -39,18 +44,20 @@ func main() {
    //     log.Fatalf("failed to create grpc api holder: %s", err)
   //}
 
-  conn, err := grpc.Dial("localhost:9092")
+  conn, err := grpc.Dial("localhost:9092", grpc.WithInsecure())
   if err != nil {
       panic(err)
   }
-
   defer conn.Close()
+
+  sc :=  serviceA.NewServiceAClient(conn)
+  serviceAData.saveData(l, sc)
 
   router := chi.NewRouter() 
   database.InitDB()
   database.Migrate()
 
-	server := handler.NewDefaultServer(ServiceB_Jumia.NewExecutableSchema(generated.Config{Resolvers:  &graph.Resolver{}}))
+	server := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers:  &graph.Resolver{}}))
   //server := handler.NewDefaultServer(generated.NewExecutableSchema(generated.Config{Resolvers: &graph.NewResolver(svc)}))
 
 	router.Handle("/", playground.Handler("GraphQL playground", "/query"))
@@ -87,3 +94,5 @@ func main() {
 
   <-ctx.Done()
   os.Exit(0)
+
+}
