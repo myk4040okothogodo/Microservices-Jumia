@@ -29,7 +29,7 @@ type ValidationError struct {
 }
 
 
-func (c *Csvdata) saveData() {
+func (c *Csvdata) SaveData() {
     //GetCsv data
     dr := &protos.DataRequest{
       Token: "762346288fdgddghbddg",

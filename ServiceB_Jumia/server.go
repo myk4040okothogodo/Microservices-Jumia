@@ -52,7 +52,7 @@ func main() {
 
   sc :=  serviceA.NewServiceAClient(conn)
   ch :=  serviceAData.NewCsvdata(l, sc)
-  ch.saveData()
+  ch.SaveData()
 
   router := chi.NewRouter() 
   database.InitDB()
