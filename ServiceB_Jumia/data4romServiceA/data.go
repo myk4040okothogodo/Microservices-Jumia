@@ -13,7 +13,7 @@ import (
 
 func (c *Csvdata)saveData( ) {
     //GetCsv data
-    dr := protos.DataRequest{
+    dr := &protos.DataRequest{
       Token: "762346288fdgddghbddg",
     }
     resp,err := c.sc.GetCsvData(context.Background(), dr)
