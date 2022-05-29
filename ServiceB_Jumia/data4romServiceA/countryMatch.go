@@ -45,9 +45,9 @@ func matchCodeToCountry(code int) string{
          226         : "BUKINA_FASO",
          249         : "SUDAN",
          20          : "EGYPT",
-         218         : "LIBYA"
+         218         : "LIBYA",
       }
 
       return countryCode[int]
-
+      
 }
