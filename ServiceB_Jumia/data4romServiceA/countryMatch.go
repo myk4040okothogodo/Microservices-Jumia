@@ -32,7 +32,7 @@ func matchCodeToCountry(code int) string{
          224         : "GUINEA",
          223         : "MALI",
          221         : "SENEGAL",
-         227           "NIGER",
+         227         :  "NIGER",
          231         : "LIBERIA",
          260         :  "ZAMBIA",
          228         :  "TOGO",

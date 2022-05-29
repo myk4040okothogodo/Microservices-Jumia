@@ -5,9 +5,10 @@ go 1.18
 require (
 	github.com/99designs/gqlgen v0.17.9
 	github.com/go-chi/chi/v5 v5.0.7
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220528083647-2a2b917724c3
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220528083647-2a2b917724c3
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220528083647-2a2b917724c3
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220528140549-74b9ca9751ff
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529065718-b2c4d0feea51
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220528140549-74b9ca9751ff
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220528140549-74b9ca9751ff
 	github.com/vektah/gqlparser/v2 v2.4.4
 	golang.org/x/crypto v0.0.0-20220525230936-793ad666bf5e
 	google.golang.org/grpc v1.46.2
