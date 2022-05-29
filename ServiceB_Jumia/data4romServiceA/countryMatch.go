@@ -4,7 +4,7 @@ func matchCodeToCountry(code int) string{
     var countryCode = map[int]string{
          254         : "KENYA",
          237         : "CAMEROON",
-         251         : "ERITREA",
+         252         : "ERITREA",
          212         : "MOZAMBIQUE",
          256         : "UGANDA",
          233         : "GHANA",
@@ -48,6 +48,6 @@ func matchCodeToCountry(code int) string{
          218         : "LIBYA",
       }
 
-      return countryCode[int]
+      return countryCode[code]
       
 }

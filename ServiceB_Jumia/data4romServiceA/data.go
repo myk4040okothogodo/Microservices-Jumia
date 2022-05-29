@@ -17,7 +17,7 @@ func saveData(l *log.Logger, sc *protos.ServiceAClient) {
     dr := protos.DataRequest{
       Token: "762346288fdgddghbddg",
     }
-    resp,err := sc.GetCsvData(context.Background(), dr)
+    resp,err := &sc.GetCsvData(context.Background(), dr)
     if err != nil {
         l.Println("[Error] error getting csv data ", err)
         return
@@ -31,7 +31,7 @@ func saveData(l *log.Logger, sc *protos.ServiceAClient) {
     for _, csvorder := range resp.PurchaseDetails {
         var order orders.Order
         order.Parcelweight = csvorder.ParcelWeight
-        order.Country      := matchCodeToCountry(csvorder.Country)
+        order.Country      = matchCodeToCountry(csvorder.Country)
         order.Email        = csvorder.Email
         order.Phone        = csvorder.Phone
         
@@ -39,7 +39,7 @@ func saveData(l *log.Logger, sc *protos.ServiceAClient) {
         if err != nil {
             log.Fatal(err)
         }
-        log.Print("Inserted ", csvorder.Email)
+        log.Print("Inserted ", csvorder.Email, res)
     }
 
 }
