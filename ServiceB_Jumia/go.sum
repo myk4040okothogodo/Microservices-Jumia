@@ -88,8 +88,8 @@ github.com/mitchellh/mapstructure v1.3.1 h1:cCBH2gTD2K0OtLlv/Y5H01VQCqmlDxz30kS5
 github.com/mitchellh/mapstructure v1.3.1/go.mod h1:bFUtVrKA4DC2yAKiSyO/QUcy7e+RRV2QTWOzhPopBRo=
 github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220529160354-899c796a3da9 h1:jVUwMp2ecV53Ct0WXe7B1GHwmXIZ3BqGszziqlUPAO8=
 github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220529160354-899c796a3da9/go.mod h1:LUJq2FRTaQVwKcTvS87uCJzquPFKjznPdGY1x+EQJmI=
-github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529160354-899c796a3da9 h1:RkXA3gVEdd0A0wnBn7huxdAeTn+2n9AORSWJl+Y6SG8=
-github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529160354-899c796a3da9/go.mod h1:fhXSIC/4++fDmhkUUTBQ7M1/Jko3QPqzZi/3m4gzXnA=
+github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529170637-dba1499fcd02 h1:OQEnwwf4/kcMa7PFM84PlFO/SLk/kjngQFOJ1U8zNyw=
+github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romServiceA v0.0.0-20220529170637-dba1499fcd02/go.mod h1:X6zyx9AQSVFzajkXY0F2pWgX0O3NTxwcVQWX9vaTzKM=
 github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220529160354-899c796a3da9 h1:5EL57UP3km1bmpSjdCnWF9gxkYcmoDKmF3GdbdqqUYw=
 github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220529160354-899c796a3da9/go.mod h1:zhMH+rygt4JrvxMzfDtgL0VTZuwGYAqWNj7XrgtBQng=
 github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220529160354-899c796a3da9 h1:fe/x+RoQbmI3ziAtS2fjRFIhR+EceKLsJ9ZOa9q0ESo=

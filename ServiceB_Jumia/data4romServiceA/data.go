@@ -11,7 +11,7 @@ import (
 
 
 
-func (c *Csvdata)saveData( ) {
+func (c *Csvdata) saveData() {
     //GetCsv data
     dr := &protos.DataRequest{
       Token: "762346288fdgddghbddg",
