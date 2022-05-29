@@ -48,7 +48,7 @@ func (c *Csvdata) SaveData() {
     for _, csvorder := range resp.PurchaseDetails {
         var order orders.Order
         order.Parcelweight = csvorder.ParcelWeight
-        order.Country      = matchCodeToCountry(csvorder.CountryCode)
+        order.Country      = MatchCodeToCountry(csvorder.CountryCode)
         order.Email        = csvorder.Email
         order.Phone        = csvorder.PhoneNumber
         
@@ -59,4 +59,4 @@ func (c *Csvdata) SaveData() {
         c.l.Println("Inserted ", csvorder.Email, res)
     }
 
-}
+  }
