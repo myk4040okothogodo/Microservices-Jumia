@@ -12,34 +12,34 @@ import (
 
 
 
-func saveData(l *log.Logger, sc protos.ServiceAClient) {
+func (c *Csvdata)saveData( ) {
     //GetCsv data
     dr := protos.DataRequest{
       Token: "762346288fdgddghbddg",
     }
-    resp,err := sc.GetCsvData(context.Background(), dr)
+    resp,err := c.sc.GetCsvData(context.Background(), dr)
     if err != nil {
-        l.Println("[Error] error getting csv data ", err)
+        c.l.Println("[Error] error getting csv data ", err)
         return
     }
 
     stmt, err := database.Db.Prepare("INSERT INTO Orders(ParcelWeight, Country, Email, Phone) VALUES(?, ?, ?, ?)")
     if err != nil {
-        log.Fatal(err)
+        c.l.Fatal(err)
     }
 
     for _, csvorder := range resp.PurchaseDetails {
         var order orders.Order
         order.Parcelweight = csvorder.ParcelWeight
-        order.Country      = matchCodeToCountry(csvorder.Country)
+        order.Country      = matchCodeToCountry(csvorder.CountryCode)
         order.Email        = csvorder.Email
-        order.Phone        = csvorder.Phone
+        order.Phone        = csvorder.PhoneNumber
         
         res, err := stmt.Exec(order.Parcelweight, order.Country, order.Email, order.Phone)
         if err != nil {
-            log.Fatal(err)
+            c.l.Fatal(err)
         }
-        log.Print("Inserted ", csvorder.Email, res)
+        c.l.Println("Inserted ", csvorder.Email, res)
     }
 
 }

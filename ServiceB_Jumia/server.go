@@ -51,7 +51,8 @@ func main() {
   defer conn.Close()
 
   sc :=  serviceA.NewServiceAClient(conn)
-  serviceAData.saveData(l, sc)
+  ch :=  serviceAData.NewCsvdata(l, sc)
+  ch.saveData()
 
   router := chi.NewRouter() 
   database.InitDB()
