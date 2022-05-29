@@ -1,8 +1,7 @@
 package data4romServiceA
 
 import (
-    "strconv"
-    "github.com/hashicorp/go-hclog"
+    "log"
     protos "github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos"
 )
 
