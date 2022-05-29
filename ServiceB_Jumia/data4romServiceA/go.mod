@@ -3,9 +3,9 @@ module github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/data4romS
 go 1.18
 
 require (
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220529160354-899c796a3da9
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220529160354-899c796a3da9
-	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220529160354-899c796a3da9
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos v0.0.0-20220529181411-8150130221a2
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders v0.0.0-20220529181411-8150130221a2
+	github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/pkg/db/migrations/mysql v0.0.0-20220529181411-8150130221a2
 )
 
 require (

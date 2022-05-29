@@ -2,6 +2,7 @@ package data4romServiceA
 
 
 import (
+    "log"
     "context"
     protos "github.com/myk4040okothogodo/Microservices4Jumia/ServiceA_Jumia/protos/ServiceA_Jumia/protos"
     "github.com/myk4040okothogodo/Microservices4Jumia/ServiceB_Jumia/internal/orders"
