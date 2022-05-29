@@ -12,12 +12,12 @@ import (
 
 
 
-func saveData(l *log.Logger, sc *protos.ServiceAClient) {
+func saveData(l *log.Logger, sc protos.ServiceAClient) {
     //GetCsv data
     dr := protos.DataRequest{
       Token: "762346288fdgddghbddg",
     }
-    resp,err := &sc.GetCsvData(context.Background(), dr)
+    resp,err := sc.GetCsvData(context.Background(), dr)
     if err != nil {
         l.Println("[Error] error getting csv data ", err)
         return
